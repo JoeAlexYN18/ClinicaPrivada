@@ -7,11 +7,8 @@ namespace ClinicaPrivada.Services
         private readonly Dictionary<int, Paciente> _pacientes = [];
         private int _currentId = 1;
 
-        public Paciente? Crear(Paciente paciente)
+        public Paciente Crear(Paciente paciente)
         {
-            if (_pacientes.ContainsKey(paciente.Id))
-                return null;
-
             paciente.Id = _currentId++;
             _pacientes[paciente.Id] = paciente;
 
@@ -40,10 +37,10 @@ namespace ClinicaPrivada.Services
             return paciente;
         }
 
-        public List<Paciente> ObtenerPorSexo(string sexo)
+        public List<Paciente> ObtenerPorSexo(Sexo sexo)
         {
             return _pacientes.Values
-                .Where(p => p.Sexo.Equals(sexo, StringComparison.OrdinalIgnoreCase))
+                .Where(p => p.Sexo == sexo)
                 .ToList();
         }
 

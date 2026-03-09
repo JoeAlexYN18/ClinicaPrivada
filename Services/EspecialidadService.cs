@@ -7,10 +7,8 @@ namespace ClinicaPrivada.Services
         private readonly Dictionary<int, Especialidad> _especialidades = new();
         private int _currentId = 1;
 
-        public Especialidad? Crear(Especialidad especialidad)
+        public Especialidad Crear(Especialidad especialidad)
         {
-            if (_especialidades.ContainsKey(especialidad.Id))
-                return null;
 
             especialidad.Id = _currentId++;
             _especialidades[especialidad.Id] = especialidad;

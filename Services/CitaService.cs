@@ -5,7 +5,7 @@ namespace ClinicaPrivada.Services
 {
     public class CitaService
     {
-        private readonly Dictionary<int, Cita> _citas = new();
+        private readonly Dictionary<int, Cita> _citas = [];
         private int _currentId = 1;
 
         private readonly PacienteService _pacienteService;
@@ -51,7 +51,7 @@ namespace ClinicaPrivada.Services
             }
 
             citaActualizada.Id = id;
-            citaActualizada.FechaCreacion = _citas[id].FechaCreacion; // mantener fecha original
+            citaActualizada.FechaCreacion = _citas[id].FechaCreacion;
             _citas[id] = citaActualizada;
 
             return citaActualizada;
@@ -67,10 +67,10 @@ namespace ClinicaPrivada.Services
 
         public List<CitaDTO> ObtenerTodos()
         {
-            return _citas.Values.Select(c => MapToDTO(c)).ToList();
+            return _citas.Values.Select(MapToDTO).ToList();
         }
 
-        private CitaDTO MapToDTO(Cita cita)
+        public CitaDTO MapToDTO(Cita cita)
         {
             var paciente = _pacienteService.ObtenerPorId(cita.PacienteId);
             var medico = _medicoService.ObtenerPorId(cita.MedicoId);

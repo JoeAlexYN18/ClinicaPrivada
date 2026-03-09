@@ -28,14 +28,14 @@ namespace ClinicaPrivada.Controllers
         /// <param name="medico">Objeto médico con datos requeridos, incluyendo EspecialidadId existente.</param>
         /// <returns>El médico creado con ID asignada.</returns>
         /// <response code="201">Médico creado exitosamente.</response>
-        /// <response code="400">No se puede crear el médico. Verifica que la especialidad exista y que los datos sean correctos.</response>
+        /// <response code="400">No se puede crear el médico porque los datos son inválidos o no existe la especialidad.</response>
         [HttpPost]
         public ActionResult<Medico> Crear([FromBody] Medico medico)
         {
             var creado = _service.Crear(medico);
 
             if (creado is null)
-                return BadRequest("No se puede crear el médico. Verifica que la especialidad exista y que los datos sean correctos.");
+                return BadRequest("No se puede crear el médico. Verifica que la especialidad exista.");
 
             return CreatedAtAction(nameof(ObtenerPorId), new { id = creado.Id }, creado);
         }

@@ -28,15 +28,11 @@ namespace ClinicaPrivada.Controllers
         /// <param name="consultorio">Objeto Consultorio con nombre y ubicación.</param>
         /// <returns>El consultorio creado con ID asignada.</returns>
         /// <response code="201">Consultorio creado correctamente.</response>
-        /// <response code="400">El consultorio ya existe o los datos son inválidos.</response>
+        /// <response code="400">Los datos son inválidos.</response>
         [HttpPost]
         public ActionResult<Consultorio> Crear([FromBody] Consultorio consultorio)
         {
             var creado = _service.Crear(consultorio);
-
-            if (creado is null)
-                return BadRequest("El consultorio ya existe.");
-
             return CreatedAtAction(nameof(ObtenerPorId), new { id = creado.Id }, creado);
         }
 

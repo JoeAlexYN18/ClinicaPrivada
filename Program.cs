@@ -1,5 +1,7 @@
 using ClinicaPrivada.Services;
 using ClinicaPrivada.Middleware;
+using System.Text.Json.Serialization;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +12,11 @@ builder.Services.AddSingleton<EspecialidadService>();
 builder.Services.AddSingleton<ConsultorioService>();
 builder.Services.AddSingleton<CitaService>();
 builder.Services.AddSingleton<EliminacionValidatorService>();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    });
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

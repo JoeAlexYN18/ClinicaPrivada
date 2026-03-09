@@ -28,15 +28,11 @@ namespace ClinicaPrivada.Controllers
         /// <param name="paciente">Objeto paciente con datos requeridos.</param>
         /// <returns>El paciente creado con ID asignada.</returns>
         /// <response code="201">Paciente creado exitosamente.</response>
-        /// <response code="400">El paciente ya existe o los datos son inválidos.</response>
+        /// <response code="400">Los datos son inválidos.</response>
         [HttpPost]
         public ActionResult<Paciente> Crear([FromBody] Paciente paciente)
         {
             var creado = _service.Crear(paciente);
-
-            if (creado is null)
-                return BadRequest("El paciente ya existe.");
-
             return CreatedAtAction(nameof(ObtenerPorId), new { id = creado.Id }, creado);
         }
 
@@ -106,11 +102,9 @@ namespace ClinicaPrivada.Controllers
         /// <returns>Lista de pacientes que coinciden con el sexo.</returns>
         /// <response code="200">Lista de pacientes filtrada (puede estar vacía si no hay coincidencias).</response>
         [HttpGet("sexo/{sexo}")]
-        public ActionResult<List<Paciente>> ObtenerPorSexo(string sexo)
+        public ActionResult<List<Paciente>> ObtenerPorSexo(Sexo sexo)
         {
-            var pacientes = _service.ObtenerPorSexo(sexo);
-
-            return Ok(pacientes); 
+            return Ok(_service.ObtenerPorSexo(sexo));
         }
 
         /// <summary>

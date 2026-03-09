@@ -28,15 +28,11 @@ namespace ClinicaPrivada.Controllers
         /// <param name="especialidad">Objeto Especialidad con nombre y descripción.</param>
         /// <returns>La especialidad creada con ID asignada.</returns>
         /// <response code="201">Especialidad creada correctamente.</response>
-        /// <response code="400">La especialidad ya existe o los datos son inválidos.</response>
+        /// <response code="400">Los datos son inválidos.</response>
         [HttpPost]
         public ActionResult<Especialidad> Crear([FromBody] Especialidad especialidad)
         {
             var creado = _service.Crear(especialidad);
-
-            if (creado is null)
-                return BadRequest("La especialidad ya existe.");
-
             return CreatedAtAction(nameof(ObtenerPorId), new { id = creado.Id }, creado);
         }
 

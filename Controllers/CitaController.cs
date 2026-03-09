@@ -88,7 +88,8 @@ namespace ClinicaPrivada.Controllers
             if (cita is null)
                 return NotFound();
 
-            return Ok(_service.ObtenerTodos().First(c => c.Id == id));
+            //return Ok(_service.ObtenerTodos().First(c => c.Id == id));
+            return Ok(_service.MapToDTO(cita));
         }
 
         /// <summary>

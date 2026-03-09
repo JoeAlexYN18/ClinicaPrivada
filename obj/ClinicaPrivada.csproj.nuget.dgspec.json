@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\ComputerScience\\IDAT\\ClinicaPrivada\\ClinicaPrivada.csproj": {}
+    "D:\\ComputerScience\\IDAT\\ClinicaPrivada\\ClinicaPrivada.csproj": {}
   },
   "projects": {
-    "d:\\ComputerScience\\IDAT\\ClinicaPrivada\\ClinicaPrivada.csproj": {
+    "D:\\ComputerScience\\IDAT\\ClinicaPrivada\\ClinicaPrivada.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\ComputerScience\\IDAT\\ClinicaPrivada\\ClinicaPrivada.csproj",
+        "projectUniqueName": "D:\\ComputerScience\\IDAT\\ClinicaPrivada\\ClinicaPrivada.csproj",
         "projectName": "ClinicaPrivada",
-        "projectPath": "d:\\ComputerScience\\IDAT\\ClinicaPrivada\\ClinicaPrivada.csproj",
+        "projectPath": "D:\\ComputerScience\\IDAT\\ClinicaPrivada\\ClinicaPrivada.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "d:\\ComputerScience\\IDAT\\ClinicaPrivada\\obj\\",
+        "outputPath": "D:\\ComputerScience\\IDAT\\ClinicaPrivada\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"

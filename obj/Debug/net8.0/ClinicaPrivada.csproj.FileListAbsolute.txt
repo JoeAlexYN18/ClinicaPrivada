@@ -30,3 +30,4 @@ D:\ComputerScience\IDAT\ClinicaPrivada\obj\Debug\net8.0\refint\ClinicaPrivada.dl
 D:\ComputerScience\IDAT\ClinicaPrivada\obj\Debug\net8.0\ClinicaPrivada.pdb
 D:\ComputerScience\IDAT\ClinicaPrivada\obj\Debug\net8.0\ClinicaPrivada.genruntimeconfig.cache
 D:\ComputerScience\IDAT\ClinicaPrivada\obj\Debug\net8.0\ref\ClinicaPrivada.dll
+D:\ComputerScience\IDAT\ClinicaPrivada\obj\Debug\net8.0\ClinicaPrivada.sourcelink.json

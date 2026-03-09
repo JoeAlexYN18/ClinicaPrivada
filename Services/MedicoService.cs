@@ -4,7 +4,7 @@ namespace ClinicaPrivada.Services
 {
     public class MedicoService
     {
-        private readonly Dictionary<int, Medico> _medicos = new();
+        private readonly Dictionary<int, Medico> _medicos = [];
         private int _currentId = 1;
         private readonly EspecialidadService _especialidadService;
 
@@ -16,9 +16,6 @@ namespace ClinicaPrivada.Services
         public Medico? Crear(Medico medico)
         {
             if (_especialidadService.ObtenerPorId(medico.EspecialidadId) is null)
-                return null;
-
-            if (_medicos.ContainsKey(medico.Id))
                 return null;
 
             medico.Id = _currentId++;

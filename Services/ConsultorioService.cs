@@ -7,10 +7,8 @@ namespace ClinicaPrivada.Services
         private readonly Dictionary<int, Consultorio> _consultorios = new();
         private int _currentId = 1;
 
-        public Consultorio? Crear(Consultorio consultorio)
+        public Consultorio Crear(Consultorio consultorio)
         {
-            if (_consultorios.ContainsKey(consultorio.Id))
-                return null;
 
             consultorio.Id = _currentId++;
             _consultorios[consultorio.Id] = consultorio;
