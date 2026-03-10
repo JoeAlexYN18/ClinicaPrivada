@@ -56,7 +56,7 @@ namespace ClinicaPrivada.Controllers
             if (actualizado is null)
                 return BadRequest("No se puede actualizar la cita. Verifica que el ID exista y que Paciente, Medico y Consultorio sean válidos.");
 
-            return Ok(_service.ObtenerTodos().First(c => c.Id == actualizado.Id));
+            return Ok(_service.MapToDTO(actualizado));
         }
 
         /// <summary>
@@ -88,7 +88,6 @@ namespace ClinicaPrivada.Controllers
             if (cita is null)
                 return NotFound();
 
-            //return Ok(_service.ObtenerTodos().First(c => c.Id == id));
             return Ok(_service.MapToDTO(cita));
         }
 

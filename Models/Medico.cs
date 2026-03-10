@@ -15,7 +15,7 @@ namespace ClinicaPrivada.Models
         public required string Apellidos { get; set; }
 
         [Required(ErrorMessage = "El número de licencia es obligatorio.")]
-        [StringLength(10, MinimumLength = 5, ErrorMessage = "El número de licencia debe tener entre 5 y 10 caracteres.")]
+        [RegularExpression(@"^\d{10}$", ErrorMessage = "El número de licencia debe tener exactamente 10 dígitos.")]
         public required string NumeroLicencia { get; set; }
 
         [Range(1, int.MaxValue, ErrorMessage = "Debe seleccionar una especialidad válida.")]

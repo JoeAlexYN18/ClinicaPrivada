@@ -25,13 +25,13 @@ namespace ClinicaPrivada.Models
         public Sexo Sexo { get; set; }
 
         [Required(ErrorMessage = "El documento de identidad es obligatorio.")]
-        [RegularExpression(@"^\d{8,20}$", ErrorMessage = "El documento de identidad debe tener entre 8 y 20 dígitos.")]
+        [RegularExpression(@"^\d{8}$", ErrorMessage = "El documento de identidad debe tener exactamente 8 dígitos.")]
         public required string DocumentoIdentidad { get; set; }
 
         public required DateOnly FechaNacimiento { get; set; }
 
         [Required(ErrorMessage = "El teléfono es obligatorio.")]
-        [RegularExpression(@"^\d{9,20}$", ErrorMessage = "El teléfono debe tener entre 9 y 20 dígitos.")]
+        [RegularExpression(@"^\d{9}$", ErrorMessage = "El teléfono debe tener exactamente 9 dígitos.")]
         public required string Telefono { get; set; }
 
         [Required(ErrorMessage = "El email es obligatorio.")]
