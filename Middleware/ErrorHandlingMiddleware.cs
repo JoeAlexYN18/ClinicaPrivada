@@ -22,7 +22,7 @@ namespace ClinicaPrivada.Middleware
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Ocurrió un error inesperado"); // Detalles para desarrollador
+                _logger.LogError(ex, "Ocurrió un error inesperado"); 
                 await HandleExceptionAsync(context);
             }
         }
