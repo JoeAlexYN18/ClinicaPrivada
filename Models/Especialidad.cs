@@ -29,3 +29,4 @@ namespace ClinicaPrivada.Models
         public required string Descripcion { get; set; }
     }
 }
+
